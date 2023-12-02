@@ -47,14 +47,14 @@ extension AppDelegate {
                 AVVideoExpectedSourceFrameRateKey: ud.integer(forKey: "frameRate")
             ] as [String : Any]
         ]
-        vwInput = AVAssetWriterInput(mediaType: AVMediaType.video, outputSettings: videoSettings)
+//        vwInput = AVAssetWriterInput(mediaType: AVMediaType.video, outputSettings: videoSettings)
         awInput = AVAssetWriterInput(mediaType: AVMediaType.audio, outputSettings: audioSettings)
-        vwInput.expectsMediaDataInRealTime = true
+//        vwInput.expectsMediaDataInRealTime = true
         awInput.expectsMediaDataInRealTime = true
 
-        if vW.canAdd(vwInput) {
-            vW.add(vwInput)
-        }
+//        if vW.canAdd(vwInput) {
+//            vW.add(vwInput)
+//        }
 
         if vW.canAdd(awInput) {
             vW.add(awInput)
@@ -66,7 +66,7 @@ extension AppDelegate {
     func closeVideo() {
         let dispatchGroup = DispatchGroup()
         dispatchGroup.enter()
-        vwInput.markAsFinished()
+//        vwInput.markAsFinished()
         awInput.markAsFinished()
         vW.finishWriting {
             self.startTime = nil
@@ -91,9 +91,9 @@ extension AppDelegate {
                     startTime = Date.now
                     vW.startSession(atSourceTime: CMSampleBufferGetPresentationTimeStamp(sampleBuffer))
                 }
-                if vwInput.isReadyForMoreMediaData {
-                    vwInput.append(sampleBuffer)
-                }
+//                if vwInput.isReadyForMoreMediaData {
+//                    vwInput.append(sampleBuffer)
+//                }
                 break
             case .audio:
                 if streamType == .systemaudio { // write directly to file if not video recording
