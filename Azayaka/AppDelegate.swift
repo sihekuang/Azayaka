@@ -13,6 +13,7 @@ import ScreenCaptureKit
 class AppDelegate: NSObject, NSApplicationDelegate, SCStreamDelegate, SCStreamOutput {
     var vW: AVAssetWriter!
     var awInput: AVAssetWriterInput!
+    var recorderAwInput: AVAssetWriterInput!
     var startTime: Date?
     var stream: SCStream!
     var filePath: String!

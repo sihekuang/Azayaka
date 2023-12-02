@@ -66,12 +66,12 @@
 				17BCDC7F295BAC9300448A97 /* Types.swift */,
 				17322D5D295929A000185BB6 /* Menu.swift */,
 				17DBD7C4295B0973005C0690 /* Preferences.swift */,
+				658EFC082B1B1F2100638026 /* AudioRecorder.swift */,
 				17322D5B295928BE00185BB6 /* Recording.swift */,
 				17322D592959286100185BB6 /* Processing.swift */,
 				172CDA622962011500A2C55D /* main.swift */,
 				17322D4E2958D08000185BB6 /* Assets.xcassets */,
 				17322D532958D08000185BB6 /* Azayaka.entitlements */,
-				658EFC082B1B1F2100638026 /* AudioRecorder.swift */,
 			);
 			path = Azayaka;
 			sourceTree = "<group>";
