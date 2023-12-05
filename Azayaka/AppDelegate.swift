@@ -14,6 +14,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SCStreamDelegate, SCStreamOu
     var vW: AVAssetWriter!
     var awInput: AVAssetWriterInput!
     var recorderAwInput: AVAssetWriterInput!
+    var audioRecorder: AudioRecorder!
     var startTime: Date?
     var stream: SCStream!
     var filePath: String!

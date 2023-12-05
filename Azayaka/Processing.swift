@@ -51,6 +51,7 @@ extension AppDelegate {
         awInput = AVAssetWriterInput(mediaType: AVMediaType.audio, outputSettings: audioSettings)
         recorderAwInput = AVAssetWriterInput(mediaType: AVMediaType.audio, outputSettings: audioSettings)
 //        vwInput.expectsMediaDataInRealTime = true
+        audioRecorder = AudioRecorder(with: recorderAwInput)
         awInput.expectsMediaDataInRealTime = true
 
 //        if vW.canAdd(vwInput) {
@@ -62,6 +63,7 @@ extension AppDelegate {
         }
 
         vW.startWriting()
+        try! audioRecorder.startRecording()
     }
 
     func closeVideo() {
@@ -70,6 +72,7 @@ extension AppDelegate {
 //        vwInput.markAsFinished()
         recorderAwInput.markAsFinished()
         awInput.markAsFinished()
+        audioRecorder.stopRecording()
         vW.finishWriting {
             self.startTime = nil
             dispatchGroup.leave()
