@@ -16,6 +16,8 @@
 		17BCDC80295BAC9400448A97 /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BCDC7F295BAC9300448A97 /* Types.swift */; };
 		17DBD7C5295B0973005C0690 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DBD7C4295B0973005C0690 /* Preferences.swift */; };
 		658EFC092B1B1F2100638026 /* AudioRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658EFC082B1B1F2100638026 /* AudioRecorder.swift */; };
+		65DE20F82B20409D00332F25 /* PLAudioMixerUtlis.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DE20F62B20409D00332F25 /* PLAudioMixerUtlis.m */; };
+		65DE20FA2B20415600332F25 /* PLAudioMixer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DE20F92B20415600332F25 /* PLAudioMixer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,10 @@
 		17BCDC7F295BAC9300448A97 /* Types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
 		17DBD7C4295B0973005C0690 /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		658EFC082B1B1F2100638026 /* AudioRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecorder.swift; sourceTree = "<group>"; };
+		65DE20F22B20409D00332F25 /* Azayaka-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Azayaka-Bridging-Header.h"; sourceTree = "<group>"; };
+		65DE20F52B20409D00332F25 /* PLAudioMixerUtlis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLAudioMixerUtlis.h; sourceTree = "<group>"; };
+		65DE20F62B20409D00332F25 /* PLAudioMixerUtlis.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLAudioMixerUtlis.m; sourceTree = "<group>"; };
+		65DE20F92B20415600332F25 /* PLAudioMixer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PLAudioMixer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +68,7 @@
 		17322D492958D07E00185BB6 /* Azayaka */ = {
 			isa = PBXGroup;
 			children = (
+				65DE20F12B20408B00332F25 /* PLAudio */,
 				17322D4A2958D07E00185BB6 /* AppDelegate.swift */,
 				17BCDC7F295BAC9300448A97 /* Types.swift */,
 				17322D5D295929A000185BB6 /* Menu.swift */,
@@ -74,6 +81,17 @@
 				17322D532958D08000185BB6 /* Azayaka.entitlements */,
 			);
 			path = Azayaka;
+			sourceTree = "<group>";
+		};
+		65DE20F12B20408B00332F25 /* PLAudio */ = {
+			isa = PBXGroup;
+			children = (
+				65DE20F92B20415600332F25 /* PLAudioMixer.swift */,
+				65DE20F22B20409D00332F25 /* Azayaka-Bridging-Header.h */,
+				65DE20F52B20409D00332F25 /* PLAudioMixerUtlis.h */,
+				65DE20F62B20409D00332F25 /* PLAudioMixerUtlis.m */,
+			);
+			path = PLAudio;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -108,6 +126,7 @@
 				TargetAttributes = {
 					17322D462958D07E00185BB6 = {
 						CreatedOnToolsVersion = 14.1;
+						LastSwiftMigration = 1500;
 					};
 				};
 			};
@@ -145,11 +164,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65DE20F82B20409D00332F25 /* PLAudioMixerUtlis.m in Sources */,
 				17322D5A2959286100185BB6 /* Processing.swift in Sources */,
 				172CDA632962011500A2C55D /* main.swift in Sources */,
 				17DBD7C5295B0973005C0690 /* Preferences.swift in Sources */,
 				17BCDC80295BAC9400448A97 /* Types.swift in Sources */,
 				17322D4B2958D07E00185BB6 /* AppDelegate.swift in Sources */,
+				65DE20FA2B20415600332F25 /* PLAudioMixer.swift in Sources */,
 				17322D5C295928BE00185BB6 /* Recording.swift in Sources */,
 				658EFC092B1B1F2100638026 /* AudioRecorder.swift in Sources */,
 				17322D5E295929A000185BB6 /* Menu.swift in Sources */,
@@ -283,6 +304,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Azayaka/Azayaka.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
@@ -306,6 +328,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = dev.mnpn.Azayaka;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Azayaka/PLAudio/Azayaka-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -315,6 +339,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Azayaka/Azayaka.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
@@ -338,6 +363,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = dev.mnpn.Azayaka;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Azayaka/PLAudio/Azayaka-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
