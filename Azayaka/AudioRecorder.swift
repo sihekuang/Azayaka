@@ -64,6 +64,8 @@ extension AudioRecorder{
     
 }
 
+
+// source: https://github.com/PatrickSCLin/PLAudioMixer/tree/master
 extension AVAudioPCMBuffer {
     
     fileprivate func convert32BitsTo16Bits(inputBufferList: AudioBufferList, outputBufferList: AudioBufferList){
